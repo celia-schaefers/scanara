@@ -1,0 +1,53 @@
+runConfig:
+  # Environment variables for your backend
+  env:
+    - variable: NODE_ENV
+      value: production
+
+    # URLs
+    - variable: FRONTEND_URL
+      value: http://localhost:5173/  # Update with your actual frontend URL
+
+    - variable: GITHUB_REDIRECT_URI
+      value: https://prodpush--scanaraai.us-east4.hosted.app/api/github/callback
+
+  # Secret environment variables (stored in Google Secret Manager)
+  # To set secrets, use: firebase apphosting:secrets:set SECRET_NAME
+  secrets:
+    # OpenAI API Key
+    - variable: OPENAI_API_KEY
+      secret: OPENAI_API_KEY
+
+    # GitHub OAuth Credentials
+    - variable: GITHUB_CLIENT_ID
+      secret: GITHUB_CLIENT_ID
+
+    - variable: GITHUB_CLIENT_SECRET
+      secret: GITHUB_CLIENT_SECRET
+
+    # Firebase Admin SDK Credentials
+    - variable: FIREBASE_PRIVATE_KEY
+      secret: FIREBASE_PRIVATE_KEY
+
+    - variable: FIREBASE_PRIVATE_KEY_ID
+      secret: FIREBASE_PRIVATE_KEY_ID
+
+    - variable: FIREBASE_CLIENT_EMAIL
+      secret: FIREBASE_CLIENT_EMAIL
+
+    - variable: FIREBASE_CLIENT_ID
+      secret: FIREBASE_CLIENT_ID
+
+    - variable: FIREBASE_PROJECT_ID
+      secret: FIREBASE_PROJECT_ID
+
+  # CPU and memory allocation
+  cpu: 1
+  memoryMiB: 512
+
+  # Minimum and maximum instances
+  minInstances: 0
+  maxInstances: 4
+
+  # Concurrency (requests per instance)
+  concurrency: 80

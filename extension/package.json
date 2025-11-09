@@ -1,0 +1,149 @@
+{
+  "name": "scanara-ai",
+  "displayName": "Scanara HIPAA Compliance",
+  "description": "HIPAA compliance auditing for your codebase - powered by Scanara AI",
+  "version": "0.1.0",
+  "publisher": "scanara",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters",
+    "Testing",
+    "Other"
+  ],
+  "keywords": [
+    "hipaa",
+    "compliance",
+    "security",
+    "healthcare",
+    "audit"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "scanara.login",
+        "title": "Login",
+        "category": "Scanara"
+      },
+      {
+        "command": "scanara.logout",
+        "title": "Logout",
+        "category": "Scanara"
+      },
+      {
+        "command": "scanara.setupApp",
+        "title": "Set Up App",
+        "category": "Scanara"
+      },
+      {
+        "command": "scanara.analyze",
+        "title": "Run HIPAA Audit",
+        "category": "Scanara",
+        "icon": "$(shield)"
+      },
+      {
+        "command": "scanara.viewReports",
+        "title": "View Web Dashboard",
+        "category": "Scanara"
+      },
+      {
+        "command": "scanara.viewAuditHistory",
+        "title": "View Audit History",
+        "category": "Scanara",
+        "icon": "$(history)"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "scanara.login"
+        },
+        {
+          "command": "scanara.logout"
+        },
+        {
+          "command": "scanara.setupApp"
+        },
+        {
+          "command": "scanara.analyze"
+        },
+        {
+          "command": "scanara.viewReports"
+        },
+        {
+          "command": "scanara.viewAuditHistory"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Scanara HIPAA Compliance",
+      "properties": {
+        "scanara.firebaseApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Firebase API Key (leave empty to use default)",
+          "order": 1
+        },
+        "scanara.apiUrl": {
+          "type": "string",
+          "default": "https://testingbackend--rnglab3303.us-east4.hosted.app",
+          "description": "Scanara API endpoint URL",
+          "order": 2
+        },
+        "scanara.fileTypes": {
+          "type": "array",
+          "default": [
+            "js",
+            "jsx",
+            "ts",
+            "tsx",
+            "py",
+            "java",
+            "cpp",
+            "c",
+            "cs",
+            "go",
+            "rs",
+            "php",
+            "rb",
+            "swift",
+            "kt",
+            "scala",
+            "dart",
+            "vue",
+            "svelte"
+          ],
+          "description": "File extensions to include in analysis",
+          "order": 3
+        },
+        "scanara.maxFiles": {
+          "type": "number",
+          "default": 100,
+          "description": "Maximum number of files to analyze",
+          "order": 4
+        }
+      }
+    }
+  },
+  "scripts": {
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/node": "18.x",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-electron": "^2.3.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/scanara-vscode"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
+}
