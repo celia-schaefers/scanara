@@ -270,7 +270,7 @@ const Audit = () => {
                   <span className={`status-badge-new ${currentAudit.status === 'Compliant' ? 'compliant' : currentAudit.status === 'Needs Attention' ? 'needs-attention' : 'non-compliant'}`}>
                     {currentAudit.status || 'Unknown'}
                   </span>
-                  {currentAudit.metrics && (
+                  {/* {currentAudit.metrics && (
                     <div className="stat-metrics-preview">
                       <span>Encryption: {currentAudit.metrics.encryption_coverage_percent?.toFixed(0) || 0}%</span>
                       <span>•</span>
@@ -278,7 +278,7 @@ const Audit = () => {
                       <span>•</span>
                       <span>BAAs: {currentAudit.metrics.baas_coverage_percent?.toFixed(0) || 0}%</span>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </div>
 
@@ -293,7 +293,7 @@ const Audit = () => {
                 </div>
                 <div className="stat-content-new">
                   <h3 className="stat-title-new">Technical</h3>
-                  <span className="stat-value-new">{currentAudit.scores?.technical_safeguards_score?.toFixed(1) || 0}</span>
+                  <span className="stat-value-new">{currentAudit.scores?.technical_safeguards_score?.toFixed(1) || 0}%</span>
                   <p className="stat-label-new">Safeguards score</p>
                 </div>
               </div>
@@ -306,7 +306,7 @@ const Audit = () => {
                 </div>
                 <div className="stat-content-new">
                   <h3 className="stat-title-new">Administrative</h3>
-                  <span className="stat-value-new">{currentAudit.scores?.administrative_safeguards_score?.toFixed(1) || 0}</span>
+                  <span className="stat-value-new">{currentAudit.scores?.administrative_safeguards_score?.toFixed(1) || 0}%</span>
                   <p className="stat-label-new">Safeguards score</p>
                 </div>
               </div>
@@ -329,7 +329,7 @@ const Audit = () => {
                 </div>
               </div>
 
-              <div className="stat-card-new">
+              {/* <div className="stat-card-new">
                 <div className="stat-icon-new">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <circle cx="12" cy="12" r="10"></circle>
@@ -342,9 +342,9 @@ const Audit = () => {
                   <span className="stat-value-new">{typeof currentAudit.metrics?.encryption_coverage_percent === 'number' ? currentAudit.metrics.encryption_coverage_percent.toFixed(0) : 0}%</span>
                   <p className="stat-label-new">Coverage</p>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="stat-card-new">
+              {/* <div className="stat-card-new">
                 <div className="stat-icon-new">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -356,7 +356,7 @@ const Audit = () => {
                   <span className="stat-value-new">{typeof currentAudit.metrics?.mfa_coverage_percent === 'number' ? currentAudit.metrics.mfa_coverage_percent.toFixed(0) : 0}%</span>
                   <p className="stat-label-new">Coverage</p>
                 </div>
-              </div>
+              </div> */}
 
               <div className="stat-card-new">
                 <div className="stat-icon-new">

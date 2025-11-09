@@ -209,7 +209,7 @@
 .stat-value-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   gap: 12px;
   margin-bottom: 12px;
 }
